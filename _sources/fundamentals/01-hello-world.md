@@ -9,7 +9,7 @@
 
 Once the new project is created, IntelliJ will automatically create a file named Main.java:
 
-```java
+```{code-block} java
 public class Main {
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ Next briefly explain the keywords `public` and `static`:
 
 ### Basic structure of classes
 
-```java
+```{code-block} java
 Keywords class ClassName {
     ...
 }
@@ -39,7 +39,7 @@ Keywords class ClassName {
 
 ### Basic structure of methods
 
-```java
+```{code-block} java
 Keywords ReturnType functionName(Parameters) {
     ...
 }
@@ -49,7 +49,7 @@ Keywords ReturnType functionName(Parameters) {
 
 Use `System.out.println` to print a String:
 
-```java
+```{code-block} java
 public class Main {
     
     public static void main(String[] args) {
