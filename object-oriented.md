@@ -512,8 +512,293 @@ public class Main {
 }
 ```
 
-## Comparing objects
+### Comparing objects
+
+Override the `equals` method and compare objects based on their content.
+
+
+Best practice: whenever we override the `equals` method, we should also override the `hashCode` method.
+
+```java
+@Override
+public boolean equals(Object obj) {
+    // if same reference
+    if (this == obj) {
+        return true;
+    }
+    // not the same type
+    if (!(obj instanceof Point)) {
+        return false;
+    }
+    // down-casting
+    Point other = (Point)obj;
+    return other.x == x && other.y == y;
+}
+
+@Override
+public int hashCode() {
+    // default hashCode hash based on the address.
+    // hashCode based on the content of the object.
+    return Objects.hash(x, y);
+}
+```
+in `Main`:
+
+```java
+package com.codewithmosh;
+
+public class Main {
+    public static void main(String[] args) {
+        Point point1 = new Point(1, 2);
+        Point point2 = new Point(1, 2);
+        System.out.println(point1.equals(point2));
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+    }
+}
+```
+
+### Polymorphism
+
+Means many forms. Allows an object to take different forms.
+
+```java
+public class CheckBox extends UIControl{
+    @Override
+    public void render() {
+        System.out.println("Render CheckBox");
+    }
+}
+```
+
+```java
+public class TextBox extends UIControl{
+    @Override
+    public void render() {
+        System.out.println("Render TextBox");
+    }
+    ...
+    }
+```
+
+in `Main`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        UIControl[] controls = { new TextBox(), new CheckBox()};
+        // each object has it's own render method
+        // in many different forms
+        for (UIControl control:
+             controls) {
+            control.render();
+        }
+    }
+}
+```
+
+### Abstract classes and methods
+
+```java
+public abstract class UIControl {
+    // method declaration, not implementation
+    public abstract void render();
+    ...
+}
+```
+
+### Final classes and methods
+
+Classes and methods that we can not extend any more.
+
+```java
+public final class CheckBox extends UIControl{
+    @Override
+    public final void render() {
+        System.out.println("Render CheckBox");
+    }
+}
+```
+
+### Deep inheritance and hierarchies
+
+Don't create deep inheritance and hierarchies.
+
+### Multiple inheritance
+
+Java class has at most one parent. They want Java to be simple and robust.
 
 
 
+## Interfaces
 
+We use interface to build loosely-coupled, extensible, testable applications.
+
+We should try to keep the coupling or relationship between classes as loosely as possible. Abstract is not enough.
+
+An interface is a type similar to a class, but it includes only methods declarations.
+
+```java
+public interface Draggleble {
+    void drag();
+}
+```
+
+* Interfaces: what should be down.
+* Classes: How it should be down.
+
+### Tightly-coupled code
+
+These two classes are tightly-coupled:
+
+```java
+public class TaxCalculator {
+    private double taxableIncome;
+
+    public TaxCalculator(double taxableIncome) {
+        this.taxableIncome = taxableIncome;
+    }
+
+    public double calculateTax() {
+        return taxableIncome * 0.3;
+    }
+}
+```
+
+```java
+public class TaxReport {
+    private TaxCalculator calculator;
+
+    public TaxReport(TaxCalculator calculator) {
+        this.calculator = calculator;
+    }
+
+    public void show() {
+        double tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+}
+```
+
+### Creating an interface
+
+```java
+public interface TaxCalculator {
+    double calculateTax();
+}
+```
+
+```java
+public class TaxCalculator2023 implements TaxCalculator {
+    private double taxableIncome;
+
+    public TaxCalculator2023(double taxableIncome) {
+        this.taxableIncome = taxableIncome;
+    }
+
+    // best practice to use Override
+    @Override
+    public double calculateTax() {
+        return taxableIncome * 0.3;
+    }
+}
+```
+
+### Dependency injection
+
+Our classes should not instantiate their dependencies. Do not create it, just use it.
+
+### Constructor injection
+
+```java
+public class TaxReport {
+    private TaxCalculator calculator;
+
+    // working with a interface
+    // does not know anything about the concrete implementation
+    public TaxReport(TaxCalculator   calculator) {
+        this.calculator = calculator;
+    }
+
+    public void show() {
+        double tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+}
+```
+
+in `Main`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        TaxCalculator2023 calculator = new TaxCalculator2023(100_000);
+        // inject dependencies
+        TaxReport report =  new TaxReport(calculator);
+    }
+}
+```
+
+### Setter injection
+
+We can change the dependencies of class throughout the lifetime of our application.
+
+```java
+public void setCalculator(TaxCalculator calculator) {
+    this.calculator = calculator;
+}
+```
+
+in `Main`
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        TaxCalculator2023 calculator = new TaxCalculator2023(100_000);
+        TaxReport report =  new TaxReport(calculator);
+        report.show();
+
+        // change dependencies
+        report.setCalculator(new TaxCalculator2022(100_000));
+        report.show();
+    }
+}
+```
+
+### Method injection
+
+Injection dependency when we use it.
+
+```java
+public class TaxReport {
+    public void show(TaxCalculator calculator) {
+        double tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+    ...
+    }
+```
+
+In reality, most of the time, we use construct injection.
+
+### Interface segregation principal
+
+segregation: 隔离并差别对待。
+
+Divide big interfaces into smaller ones.
+
+Unlike classes, Java interface can have multiple parents.
+
+
+### Project: Mytube Video Platform
+
+### Interfaces vs Abstract classes
+
+* Interfaces: Contracts, no implementation.
+* Abstract classes: Partially-completed classes, to share code between a few classes.
+
+Use interfaces when you want to decouple a class from it's dependencies. 
+
+* You can easily swap implementation to another. 
+* Extend your applications with minimal impact. Program against interfaces.
+* Test your classes in isolation, unit test.
