@@ -1,4 +1,4 @@
-# Inheritance
+# Inheritance and Polymorphism
 
 ```java
 public class Child extends Parent {
@@ -65,7 +65,7 @@ public class TextBox extends UIControl{
 
 ## Access modifiers
 
-Private members (fields and methods): `not inherited by subclasses`, not accessible outside the class.
+Private members (fields and methods): `could not inherite by subclasses`, not accessible outside the class.
 
 Protected members: public in package (`com.codewithmosh`), accessible by child classes in different packages, kind of confusing, should avoid it.
 
@@ -173,4 +173,73 @@ public class Main {
         System.out.println(point2.hashCode());
     }
 }
+```
+
+## Polymorphism
+
+Means many forms. Allows an object to take different forms.
+
+```java
+public class CheckBox extends UIControl{
+    @Override
+    public void render() {
+        System.out.println("Render CheckBox");
+    }
+}
+```
+
+```java
+public class TextBox extends UIControl{
+    @Override
+    public void render() {
+        System.out.println("Render TextBox");
+    }
+    ...
+    }
+```
+
+in `Main`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        UIControl[] controls = { new TextBox(), new CheckBox()};
+        // each object has it's own render method
+        // in many different forms
+        for (UIControl control:
+             controls) {
+            control.render();
+        }
+    }
+}
+```
+
+## Abstract classes and methods
+
+```java
+public abstract class UIControl {
+    // method declaration, not implementation
+    public abstract void render();
+    ...
+}
+```
+
+## Final classes and methods
+
+Classes and methods that we can not extend any more.
+
+```java
+public final class CheckBox extends UIControl{
+    @Override
+    public final void render() {
+        System.out.println("Render CheckBox");
+    }
+}
+```
+
+## Deep and multiple inheritance
+
+```{caution}
+Don't create deep inheritance and hierarchies.<br>
+Java class has at most one parent. The Java team wants Java to be simple and robust.
 ```

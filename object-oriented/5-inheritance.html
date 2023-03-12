@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inheritance &#8212; Notes on Java</title>
+    <title>Inheritance and Polymorphism &#8212; Notes on Java</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interfaces" href="6-interface.html" />
+    <link rel="prev" title="OOP Project: Mortgage Calculator" href="4-project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -178,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
   Object-oriented Programming
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1-paradigm.html">
    Programming paradigms
@@ -197,6 +199,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="4-project.html">
    OOP Project: Mortgage Calculator
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Inheritance and Polymorphism
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-interface.html">
+   Interfaces
   </a>
  </li>
 </ul>
@@ -406,6 +418,26 @@ title="Print to PDF"
    Comparing objects
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polymorphism">
+   Polymorphism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract-classes-and-methods">
+   Abstract classes and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-classes-and-methods">
+   Final classes and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-and-multiple-inheritance">
+   Deep and multiple inheritance
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -415,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Inheritance</h1>
+                <h1>Inheritance and Polymorphism</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -455,6 +487,26 @@ title="Print to PDF"
    Comparing objects
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polymorphism">
+   Polymorphism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract-classes-and-methods">
+   Abstract classes and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-classes-and-methods">
+   Final classes and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-and-multiple-inheritance">
+   Deep and multiple inheritance
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -465,8 +517,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="inheritance">
-<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="inheritance-and-polymorphism">
+<h1>Inheritance and Polymorphism<a class="headerlink" href="#inheritance-and-polymorphism" title="Permalink to this headline">#</a></h1>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="n">Parent</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
@@ -528,7 +580,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="access-modifiers">
 <h2>Access modifiers<a class="headerlink" href="#access-modifiers" title="Permalink to this headline">#</a></h2>
-<p>Private members (fields and methods): <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">inherited</span> <span class="pre">by</span> <span class="pre">subclasses</span></code>, not accessible outside the class.</p>
+<p>Private members (fields and methods): <code class="docutils literal notranslate"><span class="pre">could</span> <span class="pre">not</span> <span class="pre">inherite</span> <span class="pre">by</span> <span class="pre">subclasses</span></code>, not accessible outside the class.</p>
 <p>Protected members: public in package (<code class="docutils literal notranslate"><span class="pre">com.codewithmosh</span></code>), accessible by child classes in different packages, kind of confusing, should avoid it.</p>
 <p>no access modifier: package private, public in package, private outside the package.</p>
 </div>
@@ -629,6 +681,71 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="section" id="polymorphism">
+<h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">#</a></h2>
+<p>Means many forms. Allows an object to take different forms.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render CheckBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render TextBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">UIControl</span><span class="o">[]</span> <span class="n">controls</span> <span class="o">=</span> <span class="p">{</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">(),</span> <span class="k">new</span> <span class="n">CheckBox</span><span class="p">()};</span>
+        <span class="c1">// each object has it&#39;s own render method</span>
+        <span class="c1">// in many different forms</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">UIControl</span> <span class="n">control</span><span class="p">:</span>
+             <span class="n">controls</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">control</span><span class="p">.</span><span class="na">render</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="abstract-classes-and-methods">
+<h2>Abstract classes and methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
+    <span class="c1">// method declaration, not implementation</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-classes-and-methods">
+<h2>Final classes and methods<a class="headerlink" href="#final-classes-and-methods" title="Permalink to this headline">#</a></h2>
+<p>Classes and methods that we can not extend any more.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CheckBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render CheckBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deep-and-multiple-inheritance">
+<h2>Deep and multiple inheritance<a class="headerlink" href="#deep-and-multiple-inheritance" title="Permalink to this headline">#</a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Don’t create deep inheritance and hierarchies.<br>
+Java class has at most one parent. The Java team wants Java to be simple and robust.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -658,6 +775,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="4-project.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">OOP Project: Mortgage Calculator</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="6-interface.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interfaces</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
