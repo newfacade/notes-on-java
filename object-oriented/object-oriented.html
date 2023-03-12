@@ -1,0 +1,1639 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object-oriented programming &#8212; Notes on Java</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/github.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/daoqi.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Notes on Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/01-hello-world.html">
+   Java Hello World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/02-execute.html">
+   How Java code gets executed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/03-types.html">
+   Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/04-expr.html">
+   Expressions and numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/05-input.html">
+   Reading input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/06-project.html">
+   Project: Mortgage Calculator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/07-control-flow.html">
+   Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/08-project.html">
+   Revisite Project: Mortgage Calculator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/09-function.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/10-debug.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fundamentals/11-package.html">
+   Packaging java applications
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Object-oriented Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-paradigm.html">
+   Programming paradigms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-class.html">
+   Classes and Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-abstract.html">
+   Abstraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-project.html">
+   OOP Project: Mortgage Calculator
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/newfacade/notes-on-java"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/newfacade/notes-on-java/issues/new?title=Issue%20on%20page%20%2Fobject-oriented/object-oriented.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/object-oriented/object-oriented.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-paradigms">
+   Programming paradigms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Object-oriented programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#java-classes">
+   Java Classes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-classes">
+     Creating Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-objects">
+     Creating objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#memory-allocation">
+   Memory allocation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedural-programming">
+   Procedural programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getters-and-setters">
+   Getters and setters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstraction">
+   Abstraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupling">
+   Coupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructors">
+   Constructors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-overloading">
+   Method overloading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructor-overloading">
+   Constructor overloading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-members">
+   Static members
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project">
+   Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-console-class">
+     Extracting the Console class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-mortgagereport">
+     Extracting the MortgageReport
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-mortgagecalculator">
+     Extracting the MortgageCalculator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-class">
+     Object class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructors-and-inheritance">
+     Constructors and inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-modifiers">
+     Access modifiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-overriding">
+     Method overriding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upcasting-and-downcasting">
+     Upcasting and downcasting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-objects">
+     Comparing objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polymorphism">
+     Polymorphism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract-classes-and-methods">
+     Abstract classes and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-classes-and-methods">
+     Final classes and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-inheritance-and-hierarchies">
+     Deep inheritance and hierarchies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-inheritance">
+     Multiple inheritance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces">
+   Interfaces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tightly-coupled-code">
+     Tightly-coupled code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-an-interface">
+     Creating an interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependency-injection">
+     Dependency injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructor-injection">
+     Constructor injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setter-injection">
+     Setter injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-injection">
+     Method injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interface-segregation-principal">
+     Interface segregation principal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-mytube-video-platform">
+     Project: Mytube Video Platform
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interfaces-vs-abstract-classes">
+     Interfaces vs Abstract classes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Object-oriented programming</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-paradigms">
+   Programming paradigms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Object-oriented programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#java-classes">
+   Java Classes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-classes">
+     Creating Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-objects">
+     Creating objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#memory-allocation">
+   Memory allocation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedural-programming">
+   Procedural programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getters-and-setters">
+   Getters and setters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstraction">
+   Abstraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupling">
+   Coupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructors">
+   Constructors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-overloading">
+   Method overloading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructor-overloading">
+   Constructor overloading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-members">
+   Static members
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project">
+   Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-console-class">
+     Extracting the Console class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-mortgagereport">
+     Extracting the MortgageReport
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-the-mortgagecalculator">
+     Extracting the MortgageCalculator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-class">
+     Object class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructors-and-inheritance">
+     Constructors and inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-modifiers">
+     Access modifiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-overriding">
+     Method overriding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upcasting-and-downcasting">
+     Upcasting and downcasting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-objects">
+     Comparing objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polymorphism">
+     Polymorphism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract-classes-and-methods">
+     Abstract classes and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-classes-and-methods">
+     Final classes and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-inheritance-and-hierarchies">
+     Deep inheritance and hierarchies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-inheritance">
+     Multiple inheritance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces">
+   Interfaces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tightly-coupled-code">
+     Tightly-coupled code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-an-interface">
+     Creating an interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependency-injection">
+     Dependency injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructor-injection">
+     Constructor injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setter-injection">
+     Setter injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-injection">
+     Method injection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interface-segregation-principal">
+     Interface segregation principal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-mytube-video-platform">
+     Project: Mytube Video Platform
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interfaces-vs-abstract-classes">
+     Interfaces vs Abstract classes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="object-oriented-programming">
+<h1>Object-oriented programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">#</a></h1>
+<div class="section" id="programming-paradigms">
+<h2>Programming paradigms<a class="headerlink" href="#programming-paradigms" title="Permalink to this headline">#</a></h2>
+<p>Ways or styles of writing code.</p>
+<ul class="simple">
+<li><p>Procedual:</p></li>
+<li><p>Functional:</p></li>
+<li><p>Object-oriented:</p></li>
+<li><p>Event-driven:</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Many language, e.g. Python, Ruby, Java, JavaScript support multiple paradigms.</p>
+</div>
+<div class="section" id="id1">
+<h2>Object-oriented programming<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Objects contains some data(state) and methods(behaviour).</p>
+<ul class="simple">
+<li><p>Encapsulation(封装): Bundle the data and methods that operate on the data in a single unit.</p></li>
+<li><p>Abstraction:</p></li>
+<li><p>Inheritance:</p></li>
+<li><p>Polymorphism(多态):</p></li>
+<li><p>Interfaces:</p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Class: A blueprint(template) for creating objects</p></li>
+<li><p>Object: An instance of a class</p></li>
+</ul>
+</div>
+<div class="section" id="java-classes">
+<h2>Java Classes<a class="headerlink" href="#java-classes" title="Permalink to this headline">#</a></h2>
+<p>In java, we should add each class to a separate file.</p>
+<div class="section" id="creating-classes">
+<h3>Creating Classes<a class="headerlink" href="#creating-classes" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="c1">// public: this class if visible to all other classes in this project</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextBox</span> <span class="p">{</span>
+    <span class="c1">// Field, technically, we should not declare fields as public</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">text</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setText</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// text = text may be confusion</span>
+        <span class="c1">// this is a reference to the current object</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-objects">
+<h3>Creating objects<a class="headerlink" href="#creating-objects" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TextBox</span> <span class="n">textBox1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
+        <span class="c1">// if omitted, print null, dangerous</span>
+        <span class="c1">// to avoid that, init public String text = &quot;&quot; in TextBox;</span>
+        <span class="n">textBox1</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Box 1&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textBox1</span><span class="p">.</span><span class="na">text</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="memory-allocation">
+<h2>Memory allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">#</a></h2>
+<p>What happens under the hood when we create new objects in java.</p>
+<p>java manages two different areas of the memory:</p>
+<ul class="simple">
+<li><p>heap: stores objects.</p></li>
+<li><p>stack: stores short lived variables like all the primitives, as well as variables that stored references to objects on the heap.</p></li>
+</ul>
+<p>In java, we don’t need to worry about deallocation, java will take care of that.</p>
+<p>When we exit a method, java runtime will immediately remove all the variables in the stack. If there is no reference to one object in the heap and unused for a certain period of time, the backgroup process will automatically remove that object in the heap, this is called garbage collection.</p>
+</div>
+<div class="section" id="procedural-programming">
+<h2>Procedural programming<a class="headerlink" href="#procedural-programming" title="Permalink to this headline">#</a></h2>
+<p>paradigm before object-orientation.</p>
+</div>
+<div class="section" id="getters-and-setters">
+<h2>Getters and setters<a class="headerlink" href="#getters-and-setters" title="Permalink to this headline">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">int</span> <span class="n">baseSalary</span><span class="p">;</span>
+<span class="c1">// setter</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBaseSalary</span><span class="p">(</span><span class="kt">int</span> <span class="n">baseSalary</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">baseSalary</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Salary cannot be 0 or less.&quot;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">baseSalary</span> <span class="o">=</span> <span class="n">baseSalary</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// getter</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBaseSalary</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">baseSalary</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="abstraction">
+<h2>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">#</a></h2>
+<p>Reduce complexity by hiding unnecessary details.</p>
+</div>
+<div class="section" id="coupling">
+<h2>Coupling<a class="headerlink" href="#coupling" title="Permalink to this headline">#</a></h2>
+<p>Coupling is about how much a class is dependent upon or coupled to another class.</p>
+<p>We want to reduce the coupling between classes.</p>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">#</a></h2>
+<p>Constructor of Employee</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">baseSalary</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hourlyRate</span><span class="p">;</span>
+    <span class="c1">// constructor, no ReturnType even void, same name as class</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span> <span class="n">baseSalary</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hourlyRate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setBaseSalary</span><span class="p">(</span><span class="n">baseSalary</span><span class="p">);</span>
+        <span class="n">setHourlyRate</span><span class="p">(</span><span class="n">hourlyRate</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>use Constructor in Main</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Employee</span> <span class="n">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="mi">50_000</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">wage</span> <span class="o">=</span> <span class="n">employee</span><span class="p">.</span><span class="na">calculateWage</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>beatiful!</p>
+</div>
+<div class="section" id="method-overloading">
+<h2>Method overloading<a class="headerlink" href="#method-overloading" title="Permalink to this headline">#</a></h2>
+<p>Creating different implementations of it with different parameters.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">calculateWage</span><span class="p">(</span><span class="kt">int</span> <span class="n">extraHours</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">baseSalary</span> <span class="o">+</span> <span class="p">(</span><span class="n">extraHours</span> <span class="o">*</span> <span class="n">hourlyRate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">calculateWage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">calculateWage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>remember overloading a method too many times will make your application hard to maintain.</p>
+</div>
+<div class="section" id="constructor-overloading">
+<h2>Constructor overloading<a class="headerlink" href="#constructor-overloading" title="Permalink to this headline">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span> <span class="n">baseSalary</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hourlyRate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBaseSalary</span><span class="p">(</span><span class="n">baseSalary</span><span class="p">);</span>
+    <span class="n">setHourlyRate</span><span class="p">(</span><span class="n">hourlyRate</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span> <span class="n">baseSalary</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// call the first constructor</span>
+    <span class="k">this</span><span class="p">(</span><span class="n">baseSalary</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static-members">
+<h2>Static members<a class="headerlink" href="#static-members" title="Permalink to this headline">#</a></h2>
+<p>A class can have two types of members.</p>
+<ul class="simple">
+<li><p>instance members: belong to instances or objects. we can access through the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator(e.g. <code class="docutils literal notranslate"><span class="pre">employee.calculateWage()</span></code>)</p></li>
+<li><p>static members: or class members. belong to a class, not objects(e.g. <code class="docutils literal notranslate"><span class="pre">Employee.xx</span></code>). When we want to present a concept that should be in a single place, the value is independent of objects, we want to share it between all objects. Static methods can only see the other static methods in this class.</p></li>
+</ul>
+<p>Emloyee:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">baseSalary</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hourlyRate</span><span class="p">;</span>
+    <span class="c1">// static field</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numberOfEmployees</span><span class="p">;</span>
+    <span class="c1">// static method</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printNumberOfEmployees</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numberOfEmployees</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span><span class="kt">int</span> <span class="n">baseSalary</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hourlyRate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setBaseSalary</span><span class="p">(</span><span class="n">baseSalary</span><span class="p">);</span>
+        <span class="n">setHourlyRate</span><span class="p">(</span><span class="n">hourlyRate</span><span class="p">);</span>
+        <span class="n">numberOfEmployees</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Main:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Employee</span> <span class="n">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="mi">50_000</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Employee</span><span class="p">.</span><span class="na">numberOfEmployees</span><span class="p">);</span> <span class="c1">// use static field</span>
+        <span class="n">Employee</span><span class="p">.</span><span class="na">printNumberOfEmployees</span><span class="p">();</span>  <span class="c1">// use static methods</span>
+        <span class="kt">int</span> <span class="n">wage</span> <span class="o">=</span> <span class="n">employee</span><span class="p">.</span><span class="na">calculateWage</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>main method be static: This is enable the java runtime to directly call the method without having to create a new object.</p>
+</div>
+<div class="section" id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">#</a></h2>
+<p>Classes:</p>
+<ol class="simple">
+<li><p>Console: <code class="docutils literal notranslate"><span class="pre">readNumber</span></code>.</p></li>
+<li><p>MortgageReport: all about presentation.</p></li>
+<li><p>MortgageCalculator: all about calculate.</p></li>
+</ol>
+<div class="section" id="extracting-the-console-class">
+<h3>Extracting the Console class<a class="headerlink" href="#extracting-the-console-class" title="Permalink to this headline">#</a></h3>
+<p>IntelliJ Safe refactor: Refactor -&gt; Refactor this -&gt; Move to another class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Console</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">readNumber</span><span class="p">(</span><span class="n">String</span> <span class="n">prompt</span><span class="p">,</span> <span class="kt">double</span> <span class="n">min</span><span class="p">,</span> <span class="kt">double</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">value</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">prompt</span><span class="p">);</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">min</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter a value between &quot;</span> <span class="o">+</span> <span class="n">min</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="n">max</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extracting-the-mortgagereport">
+<h3>Extracting the MortgageReport<a class="headerlink" href="#extracting-the-mortgagereport" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.NumberFormat</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MortgageReport</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MortgageCalculator</span> <span class="n">calculator</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">NumberFormat</span> <span class="n">currency</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">MortgageReport</span><span class="p">(</span><span class="n">MortgageCalculator</span> <span class="n">calculator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">calculator</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">;</span>
+        <span class="n">currency</span> <span class="o">=</span> <span class="n">NumberFormat</span><span class="p">.</span><span class="na">getCurrencyInstance</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMortgage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">mortgage</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">.</span><span class="na">calculateMortgage</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MORTGAGE&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--------&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mortgage: &quot;</span> <span class="o">+</span> <span class="n">currency</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">mortgage</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printPaymentSchedule</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PAYMENT SCHEDULE&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;----------------&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">balance</span> <span class="p">:</span>
+                <span class="n">calculator</span><span class="p">.</span><span class="na">getRemainingBalances</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">currency</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">balance</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extracting-the-mortgagecalculator">
+<h3>Extracting the MortgageCalculator<a class="headerlink" href="#extracting-the-mortgagecalculator" title="Permalink to this headline">#</a></h3>
+<p>Generate -&gt; Constructor, etc.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MortgageCalculator</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span> <span class="n">MONTHS_IN_YEAR</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">principal</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">float</span> <span class="n">annualInterestRate</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span> <span class="n">years</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">MortgageCalculator</span><span class="p">(</span><span class="kt">int</span> <span class="n">principal</span><span class="p">,</span> <span class="kt">float</span> <span class="n">annualInterestRate</span><span class="p">,</span> <span class="kt">byte</span> <span class="n">years</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">principal</span> <span class="o">=</span> <span class="n">principal</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">annualInterestRate</span> <span class="o">=</span> <span class="n">annualInterestRate</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">years</span> <span class="o">=</span> <span class="n">years</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateMortgage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">float</span> <span class="n">monthlyInterestRate</span> <span class="o">=</span> <span class="n">getMonthlyInterestRate</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">numberOfPayments</span> <span class="o">=</span> <span class="n">getNumberOfPayments</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">principal</span> <span class="o">*</span> <span class="p">(</span><span class="n">monthlyInterestRate</span> <span class="o">*</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">numberOfPayments</span><span class="p">)</span> <span class="o">/</span>
+                <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">numberOfPayments</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">double</span> <span class="nf">calculateBalance</span><span class="p">(</span><span class="kt">int</span> <span class="n">paymentsMade</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">float</span> <span class="n">monthlyInterestRate</span> <span class="o">=</span> <span class="n">getMonthlyInterestRate</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">numberOfPayments</span> <span class="o">=</span> <span class="n">getNumberOfPayments</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">principal</span> <span class="o">*</span>
+                <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">numberOfPayments</span><span class="p">)</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">paymentsMade</span><span class="p">))</span>
+                <span class="o">/</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">numberOfPayments</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// return balances</span>
+    <span class="kd">public</span> <span class="kt">double</span><span class="o">[]</span> <span class="nf">getRemainingBalances</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span><span class="o">[]</span> <span class="n">balances</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">getNumberOfPayments</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">short</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">month</span> <span class="o">&lt;</span> <span class="n">balances</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">month</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">balances</span><span class="o">[</span><span class="n">month</span><span class="o">]</span> <span class="o">=</span> <span class="n">calculateBalance</span><span class="p">(</span><span class="n">month</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">balances</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">float</span> <span class="nf">getMonthlyInterestRate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">byte</span> <span class="n">PERCENT</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">annualInterestRate</span> <span class="o">/</span> <span class="n">PERCENT</span> <span class="o">/</span> <span class="n">MONTHS_IN_YEAR</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getNumberOfPayments</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">years</span> <span class="o">*</span> <span class="n">MONTHS_IN_YEAR</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Main</span></code> class:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">principal</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="na">readNumber</span><span class="p">(</span><span class="s">&quot;Principal: &quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">annualInterestRate</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="na">readNumber</span><span class="p">(</span><span class="s">&quot;annualInterestRate: &quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+        <span class="kt">byte</span> <span class="n">years</span> <span class="o">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="na">readNumber</span><span class="p">(</span><span class="s">&quot;Years: &quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+
+        <span class="n">MortgageCalculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MortgageCalculator</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span> <span class="n">annualInterestRate</span><span class="p">,</span> <span class="n">years</span><span class="p">);</span>
+
+        <span class="n">MortgageReport</span> <span class="n">report</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MortgageReport</span><span class="p">(</span><span class="n">calculator</span><span class="p">);</span>
+        <span class="n">report</span><span class="p">.</span><span class="na">printMortgage</span><span class="p">();</span>
+        <span class="n">report</span><span class="p">.</span><span class="na">printPaymentSchedule</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="n">Parent</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="object-class">
+<h3>Object class<a class="headerlink" href="#object-class" title="Permalink to this headline">#</a></h3>
+<p>All class directly or indirectly inherits from the <code class="docutils literal notranslate"><span class="pre">Object</span></code> class. Has <code class="docutils literal notranslate"><span class="pre">hashCode</span></code>, <code class="docutils literal notranslate"><span class="pre">equals</span></code>, <code class="docutils literal notranslate"><span class="pre">toString</span></code> … methods.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TextBox</span> <span class="n">box1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
+        <span class="n">TextBox</span> <span class="n">box2</span> <span class="o">=</span> <span class="n">box1</span><span class="p">;</span>
+        <span class="c1">// calculate based on the address of this object in memory</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+        <span class="c1">// both objects reference the same object in memory</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box2</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+
+        <span class="c1">// compare based on their hashCode</span>
+        <span class="n">TextBox</span> <span class="n">box3</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">box2</span><span class="p">));</span>  <span class="c1">// true</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">box3</span><span class="p">));</span>  <span class="c1">// false</span>
+
+        <span class="c1">// can be overloaded</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constructors-and-inheritance">
+<h3>Constructors and inheritance<a class="headerlink" href="#constructors-and-inheritance" title="Permalink to this headline">#</a></h3>
+<p>will call parent’s Constructor first!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">UIControl</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">isEnabled</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">isEnabled</span> <span class="o">=</span> <span class="n">isEnabled</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;UIControl&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">TextBox</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// explicitly call constructor</span>
+        <span class="c1">// should be the first statement of constructor</span>
+        <span class="kd">super</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;TextBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="access-modifiers">
+<h3>Access modifiers<a class="headerlink" href="#access-modifiers" title="Permalink to this headline">#</a></h3>
+<p>Private members (fields and methods): <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">inherited</span> <span class="pre">by</span> <span class="pre">subclasses</span></code>, not accessible outside the class.</p>
+<p>Protected members: public in package (<code class="docutils literal notranslate"><span class="pre">com.codewithmosh</span></code>), accessible by child classes in different packages, kind of confusing, should avoid it.</p>
+<p>no access modifier: package private, public in package, private outside the package.</p>
+</div>
+<div class="section" id="method-overriding">
+<h3>Method overriding<a class="headerlink" href="#method-overriding" title="Permalink to this headline">#</a></h3>
+<p>Not method overloading (implement using different parameters).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Override the toString method in the base Object class</span>
+<span class="c1">// @Override is annotation, get extra information to the Java Compiler</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">text</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TextBox</span> <span class="n">textBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
+        <span class="n">textBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textBox</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="c1">// println automatically call toString method</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textBox</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="upcasting-and-downcasting">
+<h3>Upcasting and downcasting<a class="headerlink" href="#upcasting-and-downcasting" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Upcasting: casting an object to one of its super types</p></li>
+<li><p>Downcasting: casting an object to one of its sub types</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">UIControl</span> <span class="n">control</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UIControl</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">TextBox</span> <span class="n">textBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
+        <span class="c1">// Up-casting: TextBox is UIControl</span>
+        <span class="n">show</span><span class="p">(</span><span class="n">textBox</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">(</span><span class="n">UIControl</span> <span class="n">control</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Down-casting: UIControl -&gt; TextBox</span>
+        <span class="c1">// make setText accessible at compile time</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">control</span> <span class="k">instanceof</span> <span class="n">TextBox</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">TextBox</span> <span class="n">textBox</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextBox</span><span class="p">)</span> <span class="n">control</span><span class="p">;</span>
+            <span class="n">textBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">control</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparing-objects">
+<h3>Comparing objects<a class="headerlink" href="#comparing-objects" title="Permalink to this headline">#</a></h3>
+<p>Override the <code class="docutils literal notranslate"><span class="pre">equals</span></code> method and compare objects based on their content.</p>
+<p>Best practice: whenever we override the <code class="docutils literal notranslate"><span class="pre">equals</span></code> method, we should also override the <code class="docutils literal notranslate"><span class="pre">hashCode</span></code> method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// if same reference</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// not the same type</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Point</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// down-casting</span>
+    <span class="n">Point</span> <span class="n">other</span> <span class="o">=</span> <span class="p">(</span><span class="n">Point</span><span class="p">)</span><span class="n">obj</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">other</span><span class="p">.</span><span class="na">x</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">.</span><span class="na">y</span> <span class="o">==</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// default hashCode hash based on the address.</span>
+    <span class="c1">// hashCode based on the content of the object.</span>
+    <span class="k">return</span> <span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Point</span> <span class="n">point1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">Point</span> <span class="n">point2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">point2</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point2</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="polymorphism">
+<h3>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">#</a></h3>
+<p>Means many forms. Allows an object to take different forms.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render CheckBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render TextBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">UIControl</span><span class="o">[]</span> <span class="n">controls</span> <span class="o">=</span> <span class="p">{</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">(),</span> <span class="k">new</span> <span class="n">CheckBox</span><span class="p">()};</span>
+        <span class="c1">// each object has it&#39;s own render method</span>
+        <span class="c1">// in many different forms</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">UIControl</span> <span class="n">control</span><span class="p">:</span>
+             <span class="n">controls</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">control</span><span class="p">.</span><span class="na">render</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="abstract-classes-and-methods">
+<h3>Abstract classes and methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
+    <span class="c1">// method declaration, not implementation</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-classes-and-methods">
+<h3>Final classes and methods<a class="headerlink" href="#final-classes-and-methods" title="Permalink to this headline">#</a></h3>
+<p>Classes and methods that we can not extend any more.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CheckBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Render CheckBox&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deep-inheritance-and-hierarchies">
+<h3>Deep inheritance and hierarchies<a class="headerlink" href="#deep-inheritance-and-hierarchies" title="Permalink to this headline">#</a></h3>
+<p>Don’t create deep inheritance and hierarchies.</p>
+</div>
+<div class="section" id="multiple-inheritance">
+<h3>Multiple inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">#</a></h3>
+<p>Java class has at most one parent. They want Java to be simple and robust.</p>
+</div>
+</div>
+<div class="section" id="interfaces">
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">#</a></h2>
+<p>We use interface to build loosely-coupled, extensible, testable applications.</p>
+<p>We should try to keep the coupling or relationship between classes as loosely as possible. Abstract is not enough.</p>
+<p>An interface is a type similar to a class, but it includes only methods declarations.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Draggleble</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">drag</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Interfaces: what should be down.</p></li>
+<li><p>Classes: How it should be down.</p></li>
+</ul>
+<div class="section" id="tightly-coupled-code">
+<h3>Tightly-coupled code<a class="headerlink" href="#tightly-coupled-code" title="Permalink to this headline">#</a></h3>
+<p>These two classes are tightly-coupled:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaxCalculator</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">taxableIncome</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">TaxCalculator</span><span class="p">(</span><span class="kt">double</span> <span class="n">taxableIncome</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">taxableIncome</span> <span class="o">=</span> <span class="n">taxableIncome</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTax</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">taxableIncome</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaxReport</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">TaxCalculator</span> <span class="n">calculator</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">TaxReport</span><span class="p">(</span><span class="n">TaxCalculator</span> <span class="n">calculator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">calculator</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">tax</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">.</span><span class="na">calculateTax</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tax</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-an-interface">
+<h3>Creating an interface<a class="headerlink" href="#creating-an-interface" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TaxCalculator</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">calculateTax</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaxCalculator2023</span> <span class="kd">implements</span> <span class="n">TaxCalculator</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">taxableIncome</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">TaxCalculator2023</span><span class="p">(</span><span class="kt">double</span> <span class="n">taxableIncome</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">taxableIncome</span> <span class="o">=</span> <span class="n">taxableIncome</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// best practice to use Override</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTax</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">taxableIncome</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dependency-injection">
+<h3>Dependency injection<a class="headerlink" href="#dependency-injection" title="Permalink to this headline">#</a></h3>
+<p>Our classes should not instantiate their dependencies. Do not create it, just use it.</p>
+</div>
+<div class="section" id="constructor-injection">
+<h3>Constructor injection<a class="headerlink" href="#constructor-injection" title="Permalink to this headline">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaxReport</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">TaxCalculator</span> <span class="n">calculator</span><span class="p">;</span>
+
+    <span class="c1">// working with a interface</span>
+    <span class="c1">// does not know anything about the concrete implementation</span>
+    <span class="kd">public</span> <span class="nf">TaxReport</span><span class="p">(</span><span class="n">TaxCalculator</span>   <span class="n">calculator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">calculator</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">tax</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">.</span><span class="na">calculateTax</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tax</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TaxCalculator2023</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TaxCalculator2023</span><span class="p">(</span><span class="mi">100_000</span><span class="p">);</span>
+        <span class="c1">// inject dependencies</span>
+        <span class="n">TaxReport</span> <span class="n">report</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">TaxReport</span><span class="p">(</span><span class="n">calculator</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setter-injection">
+<h3>Setter injection<a class="headerlink" href="#setter-injection" title="Permalink to this headline">#</a></h3>
+<p>We can change the dependencies of class throughout the lifetime of our application.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCalculator</span><span class="p">(</span><span class="n">TaxCalculator</span> <span class="n">calculator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">calculator</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">Main</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TaxCalculator2023</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TaxCalculator2023</span><span class="p">(</span><span class="mi">100_000</span><span class="p">);</span>
+        <span class="n">TaxReport</span> <span class="n">report</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">TaxReport</span><span class="p">(</span><span class="n">calculator</span><span class="p">);</span>
+        <span class="n">report</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+
+        <span class="c1">// change dependencies</span>
+        <span class="n">report</span><span class="p">.</span><span class="na">setCalculator</span><span class="p">(</span><span class="k">new</span> <span class="n">TaxCalculator2022</span><span class="p">(</span><span class="mi">100_000</span><span class="p">));</span>
+        <span class="n">report</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="method-injection">
+<h3>Method injection<a class="headerlink" href="#method-injection" title="Permalink to this headline">#</a></h3>
+<p>Injection dependency when we use it.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaxReport</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">(</span><span class="n">TaxCalculator</span> <span class="n">calculator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">tax</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">.</span><span class="na">calculateTax</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tax</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>In reality, most of the time, we use construct injection.</p>
+</div>
+<div class="section" id="interface-segregation-principal">
+<h3>Interface segregation principal<a class="headerlink" href="#interface-segregation-principal" title="Permalink to this headline">#</a></h3>
+<p>segregation: 隔离并差别对待。</p>
+<p>Divide big interfaces into smaller ones.</p>
+<p>Unlike classes, Java interface can have multiple parents.</p>
+</div>
+<div class="section" id="project-mytube-video-platform">
+<h3>Project: Mytube Video Platform<a class="headerlink" href="#project-mytube-video-platform" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="interfaces-vs-abstract-classes">
+<h3>Interfaces vs Abstract classes<a class="headerlink" href="#interfaces-vs-abstract-classes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Interfaces: Contracts, no implementation.</p></li>
+<li><p>Abstract classes: Partially-completed classes, to share code between a few classes.</p></li>
+</ul>
+<p>Use interfaces when you want to decouple a class from it’s dependencies.</p>
+<ul class="simple">
+<li><p>You can easily swap implementation to another.</p></li>
+<li><p>Extend your applications with minimal impact. Program against interfaces.</p></li>
+<li><p>Test your classes in isolation, unit test.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./object-oriented"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By newfacade<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
