@@ -3,12 +3,12 @@
 
 title: Notes on Java
 author: newfacade
-logo: logo.png
+logo: images/daoqi.jpg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -30,3 +30,4 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  favicon: images/github.ico
