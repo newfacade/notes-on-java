@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inheritance and Polymorphism &#8212; Notes on Java</title>
+    <title>Inheritance &#8212; Notes on Java</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../_static/daoqi.jpg" class="logo" alt="logo">
+      <img src="../_static/ai-000.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Notes on Java</h1>
@@ -113,103 +113,162 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Fundamentals
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/01-hello-world.html">
-   Java Hello World
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../fundamentals/0.html">
+   Fundamentals
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/01-hello-world.html">
+     Java Hello World
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/02-execute.html">
+     How Java code gets executed
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/03-types.html">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/04-expr.html">
+     Expressions and numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/05-input.html">
+     Reading input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/06-project.html">
+     Project: Mortgage Calculator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/07-control-flow.html">
+     Control flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/08-project.html">
+     Revisite Project: Mortgage Calculator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/09-function.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/10-debug.html">
+     Debugging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fundamentals/11-package.html">
+     Packaging java applications
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/02-execute.html">
-   How Java code gets executed
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="0.html">
+   Object-Oriented Programming
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-paradigm.html">
+     Programming paradigms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-class.html">
+     Classes and Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-abstract.html">
+     Abstraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-project.html">
+     OOP Project: Mortgage Calculator
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Inheritance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-interface.html">
+     Interfaces
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/03-types.html">
-   Types
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced-topics/0.html">
+   Advanced Topics
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/04-expr.html">
-   Expressions and numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/05-input.html">
-   Reading input
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/06-project.html">
-   Project: Mortgage Calculator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/07-control-flow.html">
-   Control flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/08-project.html">
-   Revisite Project: Mortgage Calculator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/09-function.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/10-debug.html">
-   Debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fundamentals/11-package.html">
-   Packaging java applications
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Object-oriented Programming
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1-paradigm.html">
-   Programming paradigms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2-class.html">
-   Classes and Objects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3-abstract.html">
-   Abstraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4-project.html">
-   OOP Project: Mortgage Calculator
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Inheritance and Polymorphism
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6-interface.html">
-   Interfaces
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/1-exception.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/2-generics.html">
+     Generics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/3-collection.html">
+     Iterables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/4-list.html">
+     List
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/5-queue.html">
+     Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/6-set.html">
+     Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced-topics/7-map.html">
+     Map
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -447,7 +506,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Inheritance and Polymorphism</h1>
+                <h1>Inheritance</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -517,8 +576,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="inheritance-and-polymorphism">
-<h1>Inheritance and Polymorphism<a class="headerlink" href="#inheritance-and-polymorphism" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="inheritance">
+<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inheritance is one of the key features of OOP that allows us to create a new class from an existing class. The new class that is created is known as subclass (child or derived class) and the exsiting class from where the child class is derived is known as superclass (parent or base class).</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword is used to perform inheritance in Java:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="n">Parent</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
@@ -526,7 +590,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="object-class">
 <h2>Object class<a class="headerlink" href="#object-class" title="Permalink to this headline">#</a></h2>
-<p>All class directly or indirectly inherits from the <code class="docutils literal notranslate"><span class="pre">Object</span></code> class. Has <code class="docutils literal notranslate"><span class="pre">hashCode</span></code>, <code class="docutils literal notranslate"><span class="pre">equals</span></code>, <code class="docutils literal notranslate"><span class="pre">toString</span></code> … methods.</p>
+<p>All class directly or indirectly inherits from the <code class="docutils literal notranslate"><span class="pre">Object</span></code> class. It has <code class="docutils literal notranslate"><span class="pre">hashCode</span></code>, <code class="docutils literal notranslate"><span class="pre">equals</span></code>, <code class="docutils literal notranslate"><span class="pre">toString</span></code> … methods.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.codewithmosh</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
@@ -543,7 +607,6 @@ title="Print to PDF"
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">box2</span><span class="p">));</span>  <span class="c1">// true</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">box3</span><span class="p">));</span>  <span class="c1">// false</span>
 
-        <span class="c1">// can be overloaded</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -552,7 +615,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="constructors-and-inheritance">
 <h2>Constructors and inheritance<a class="headerlink" href="#constructors-and-inheritance" title="Permalink to this headline">#</a></h2>
-<p>will call parent’s Constructor first!</p>
+<p>Will call parent’s Constructor first!</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
@@ -569,7 +632,7 @@ title="Print to PDF"
 
     <span class="kd">public</span> <span class="nf">TextBox</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// explicitly call constructor</span>
-        <span class="c1">// should be the first statement of constructor</span>
+        <span class="c1">// `super` should be the first statement</span>
         <span class="kd">super</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;TextBox&quot;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -581,8 +644,8 @@ title="Print to PDF"
 <div class="section" id="access-modifiers">
 <h2>Access modifiers<a class="headerlink" href="#access-modifiers" title="Permalink to this headline">#</a></h2>
 <p>Private members (fields and methods): <code class="docutils literal notranslate"><span class="pre">could</span> <span class="pre">not</span> <span class="pre">inherite</span> <span class="pre">by</span> <span class="pre">subclasses</span></code>, not accessible outside the class.</p>
-<p>Protected members: public in package (<code class="docutils literal notranslate"><span class="pre">com.codewithmosh</span></code>), accessible by child classes in different packages, kind of confusing, should avoid it.</p>
-<p>no access modifier: package private, public in package, private outside the package.</p>
+<p>Protected members: public in package (e.g. <code class="docutils literal notranslate"><span class="pre">com.codewithmosh</span></code>), accessible by child classes in different packages, private in other cases. Kind of confusing, should avoid it.</p>
+<p>no access modifier: public in package, private outside the package.</p>
 </div>
 <div class="section" id="method-overriding">
 <h2>Method overriding<a class="headerlink" href="#method-overriding" title="Permalink to this headline">#</a></h2>
@@ -620,7 +683,6 @@ title="Print to PDF"
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">UIControl</span> <span class="n">control</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UIControl</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
         <span class="n">TextBox</span> <span class="n">textBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">();</span>
         <span class="c1">// Up-casting: TextBox is UIControl</span>
         <span class="n">show</span><span class="p">(</span><span class="n">textBox</span><span class="p">);</span>
@@ -683,7 +745,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="polymorphism">
 <h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">#</a></h2>
-<p>Means many forms. Allows an object to take different forms.</p>
+<p>Polymorphism means many forms, it is the provision of a single interface to entities of different types.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckBox</span> <span class="kd">extends</span> <span class="n">UIControl</span><span class="p">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
@@ -718,7 +780,8 @@ title="Print to PDF"
 </div>
 <div class="section" id="abstract-classes-and-methods">
 <h2>Abstract classes and methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">#</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// a class that could not instantiated</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">UIControl</span> <span class="p">{</span>
     <span class="c1">// method declaration, not implementation</span>
     <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">render</span><span class="p">();</span>
     <span class="p">...</span>
@@ -742,8 +805,8 @@ title="Print to PDF"
 <h2>Deep and multiple inheritance<a class="headerlink" href="#deep-and-multiple-inheritance" title="Permalink to this headline">#</a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Don’t create deep inheritance and hierarchies.<br>
-Java class has at most one parent. The Java team wants Java to be simple and robust.</p>
+<p>Don’t create deep inheritance.<br>
+One Java class has at most one direct parent. The Java team wants Java to be simple and robust.</p>
 </div>
 </div>
 </div>

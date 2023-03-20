@@ -19,7 +19,7 @@ public class TextBox {
     public String text;
     
     public void setText(String text) {
-        // this is a reference to the current object
+        // `this` is a reference to the current object
         this.text = text;
     }
 
@@ -59,6 +59,6 @@ What happens under the hood when we create new objects in Java? In fact, Java ma
 
 * stack: stores short lived variables like all the primitives, as well as variables that stored references to objects on the heap.
 
-When we exit a method, Java runtime will immediately remove all the variables in the stack. If there is no reference to one object in the heap and unused for a certain period of time, the backgroup process will automatically remove that object in the heap, this is called garbage collection.
+When we exit a method, Java runtime will immediately remove all the variables in the stack. If there is no reference to one object in the heap and unused for a certain period of time, a background process will automatically remove that object in the heap, this is called `garbage collection`.
 
 So in Java, we don't need to worry about deallocation, Java will take care of that.

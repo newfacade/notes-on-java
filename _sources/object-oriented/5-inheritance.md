@@ -1,4 +1,10 @@
-# Inheritance and Polymorphism
+# Inheritance
+
+```{note}
+Inheritance is one of the key features of OOP that allows us to create a new class from an existing class. The new class that is created is known as subclass (child or derived class) and the exsiting class from where the child class is derived is known as superclass (parent or base class).
+```
+
+The `extends` keyword is used to perform inheritance in Java:
 
 ```java
 public class Child extends Parent {
@@ -8,7 +14,7 @@ public class Child extends Parent {
 
 ## Object class
 
-All class directly or indirectly inherits from the `Object` class. Has `hashCode`, `equals`, `toString` ... methods.
+All class directly or indirectly inherits from the `Object` class. It has `hashCode`, `equals`, `toString` ... methods.
 
 ```java
 package com.codewithmosh;
@@ -27,7 +33,6 @@ public class Main {
         System.out.println(box1.equals(box2));  // true
         System.out.println(box1.equals(box3));  // false
 
-        // can be overloaded
         System.out.println(box1.toString());
     }
 }
@@ -35,7 +40,7 @@ public class Main {
 
 ## Constructors and inheritance
 
-will call parent's Constructor first!
+Will call parent's Constructor first!
 
 ```java
 public class UIControl {
@@ -55,7 +60,7 @@ public class TextBox extends UIControl{
 
     public TextBox() {
         // explicitly call constructor
-        // should be the first statement of constructor
+        // `super` should be the first statement
         super(true);
         System.out.println("TextBox");
     }
@@ -67,9 +72,9 @@ public class TextBox extends UIControl{
 
 Private members (fields and methods): `could not inherite by subclasses`, not accessible outside the class.
 
-Protected members: public in package (`com.codewithmosh`), accessible by child classes in different packages, kind of confusing, should avoid it.
+Protected members: public in package (e.g. `com.codewithmosh`), accessible by child classes in different packages, private in other cases. Kind of confusing, should avoid it.
 
-no access modifier: package private, public in package, private outside the package.
+no access modifier: public in package, private outside the package.
 
 
 ## Method overriding
@@ -111,7 +116,6 @@ package com.codewithmosh;
 
 public class Main {
     public static void main(String[] args) {
-        UIControl control = new UIControl(true);
         TextBox textBox = new TextBox();
         // Up-casting: TextBox is UIControl
         show(textBox);
@@ -177,7 +181,7 @@ public class Main {
 
 ## Polymorphism
 
-Means many forms. Allows an object to take different forms.
+Polymorphism means many forms, it is the provision of a single interface to entities of different types.
 
 ```java
 public class CheckBox extends UIControl{
@@ -217,6 +221,7 @@ public class Main {
 ## Abstract classes and methods
 
 ```java
+// a class that could not instantiated
 public abstract class UIControl {
     // method declaration, not implementation
     public abstract void render();
@@ -240,6 +245,6 @@ public final class CheckBox extends UIControl{
 ## Deep and multiple inheritance
 
 ```{caution}
-Don't create deep inheritance and hierarchies.<br>
-Java class has at most one parent. The Java team wants Java to be simple and robust.
+Don't create deep inheritance.<br>
+One Java class has at most one direct parent. The Java team wants Java to be simple and robust.
 ```

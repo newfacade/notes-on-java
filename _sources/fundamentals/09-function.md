@@ -28,7 +28,7 @@ Refactoring means changing the structure of the code without changing its bahavi
 1. The concepts or lines of code that always go together.
 2. Look for repetitive patterns in your code.
 
-We encapsulate the repetitive read number pattern to function `readNumber` and the meaningful concepts of calculate mortgage to fucntion `calculateMortgage`.
+We extract the repetitive read number pattern to function `readNumber` and the meaningful concepts of calculate mortgage to fucntion `calculateMortgage`.
 
 ```java
 import java.text.NumberFormat;
