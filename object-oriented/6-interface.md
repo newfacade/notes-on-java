@@ -67,7 +67,6 @@ public class TaxCalculator2023 implements TaxCalculator {
         this.taxableIncome = taxableIncome;
     }
 
-    // best practice to use Override
     @Override
     public double calculateTax() {
         return taxableIncome * 0.3;
@@ -77,7 +76,9 @@ public class TaxCalculator2023 implements TaxCalculator {
 
 ## Dependency injection
 
-Our classes should not instantiate their dependencies. Do not create it, just use it.
+```{tip}
+In reality, most of the time, construct injection is enough.
+```
 
 ### Constructor injection
 
@@ -112,7 +113,7 @@ public class Main {
 
 ### Setter injection
 
-We can change the dependencies of class throughout the lifetime of our application.
+Setter injection allows us to change the dependencies of class.
 
 ```java
 public void setCalculator(TaxCalculator calculator) {
@@ -150,10 +151,6 @@ public class TaxReport {
     }
 ```
 
-```{tip}
-In reality, most of the time, we use construct injection.
-```
-
 ## Interface segregation principal
 
 ```{note}
@@ -163,11 +160,11 @@ Unlike classes, Java interface can have multiple parents.
 
 ## Interfaces vs Abstract classes
 
-* Interfaces: Contracts, no implementation.
-* Abstract classes: Partially-completed classes, to share code between a few classes.
+* Interfaces: Only declarations, no implementation.
+* Abstract classes: Partially-completed classes, wo that we can share code between a few classes.
 
 Use interfaces when you want to decouple a class from it's dependencies. 
 
 * You can easily swap implementation to another. 
-* Extend your applications with minimal impact. Program against interfaces.
-* Test your classes in isolation, unit test.
+* Program against interfaces: extend your applications with minimal impact.
+* Unit test: test your classes in isolation.

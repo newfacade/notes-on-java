@@ -3,26 +3,34 @@
 
 format: jb-book
 root: intro
-parts:
-  - caption: Fundamentals
-    chapters:
-    - file: fundamentals/01-hello-world
-    - file: fundamentals/02-execute
-    - file: fundamentals/03-types
-    - file: fundamentals/04-expr
-    - file: fundamentals/05-input
-    - file: fundamentals/06-project
-    - file: fundamentals/07-control-flow
-    - file: fundamentals/08-project
-    - file: fundamentals/09-function
-    - file: fundamentals/10-debug
-    - file: fundamentals/11-package
-  - caption: Object-oriented Programming
-    chapters:
-    - file: object-oriented/1-paradigm
-    - file: object-oriented/2-class
-    - file: object-oriented/3-abstract
-    - file: object-oriented/4-project
-    - file: object-oriented/5-inheritance
-    - file: object-oriented/6-interface
-
+chapters:
+- file: fundamentals/0
+  sections:
+  - file: fundamentals/01-hello-world
+  - file: fundamentals/02-execute
+  - file: fundamentals/03-types
+  - file: fundamentals/04-expr
+  - file: fundamentals/05-input
+  - file: fundamentals/06-project
+  - file: fundamentals/07-control-flow
+  - file: fundamentals/08-project
+  - file: fundamentals/09-function
+  - file: fundamentals/10-debug
+  - file: fundamentals/11-package
+- file: object-oriented/0
+  sections:
+  - file: object-oriented/1-paradigm
+  - file: object-oriented/2-class
+  - file: object-oriented/3-abstract
+  - file: object-oriented/4-project
+  - file: object-oriented/5-inheritance
+  - file: object-oriented/6-interface
+- file: advanced-topics/0
+  sections:
+  - file: advanced-topics/1-exception
+  - file: advanced-topics/2-generics
+  - file: advanced-topics/3-collection
+  - file: advanced-topics/4-list
+  - file: advanced-topics/5-queue
+  - file: advanced-topics/6-set
+  - file: advanced-topics/7-map

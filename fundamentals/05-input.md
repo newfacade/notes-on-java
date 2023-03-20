@@ -1,5 +1,9 @@
 # Reading input
 
+```{note}
+Reading input using Scanner.
+```
+
 Initialization:
 
 ```java

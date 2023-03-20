@@ -12,6 +12,6 @@ Compilation and execution using the command line:
 Main.java
 (base) facer@localhost src % javac Main.java
 (base) facer@localhost src % java Main
-Hello World!
+Hello World
 (base) facer@localhost src % 
 ```

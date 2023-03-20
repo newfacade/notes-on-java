@@ -1,7 +1,7 @@
 # Packaging java applications
 
 ```{note}
-A package in Java is used to group related classes. In this section, we will learn how to package your application into jar files so that you can give it to anyone who has a JRE(java runtime environment, a subset of JDK and a superset of JVM) and run the program.
+A package in Java is used to group related classes. In this section, we will learn how to package your application into jar files so that you can give it to anyone who has a JRE(Java Runtime Environment, a subset of JDK and a superset of JVM) and run the program.
 ```
 
 Steps of package in IntelliJ

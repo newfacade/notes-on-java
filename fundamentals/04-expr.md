@@ -1,5 +1,9 @@
 # Expressions and numbers
 
+```{note}
+We will learn arithmetic expressions, the math class and formatting numbers in this section.
+```
+
 ## Arithmetic expressions
 
 Division need attention:

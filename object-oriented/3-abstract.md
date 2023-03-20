@@ -6,23 +6,24 @@ Objects in an OOP language provide an abstraction that hides the internal implem
 
 ## Constructors
 
-Constrcutor is an method whose function name equals Class name, it has no return type.
+Constrcutors are methods that construct objects, a constructor's function name equals its Class name and has no return type.
 
 ```java
+package com.codewithmosh;
+
 public class Employee {
     private int baseSalary;
     private int hourlyRate;
     
     // constructor
     public Employee(int baseSalary, int hourlyRate) {
-        setBaseSalary(baseSalary);
-        setHourlyRate(hourlyRate);
+        this.baseSalary = baseSalary;
+        this.hourlyRate = hourlyRate;
     }
-    ...
-    }
+}
 ```
 
-Use Constructor in Main:
+Use constructors in Main:
 
 ```java
 package com.codewithmosh;
@@ -31,8 +32,6 @@ public class Main {
 
     public static void main(String[] args) {
         Employee employee = new Employee(50_000, 20);
-        int wage = employee.calculateWage(10);
-        System.out.println(wage);
     }
 }
 ```
@@ -43,9 +42,10 @@ If there is no explicit constructor, Java will create a default constructor that
 
 ## Getters and setters
 
-Create a getter and a setter for a field if necessary, so that we can set this field private.
+Create a getter and a setter for a field:
 
 ```java
+// we can set this field private then
 private int baseSalary;
 
 // setter
@@ -81,11 +81,7 @@ public int calculateWage() {
 }
 ```
 
-```{caution}
-Remember overloading a method too many times will make your application hard to maintain.
-```
-
-### Constructor overloading
+Constructor overloading:
 
 ```java
 public Employee(int baseSalary, int hourlyRate) {
@@ -96,6 +92,10 @@ public Employee(int baseSalary, int hourlyRate) {
 public Employee(int baseSalary) {
     this(baseSalary, 0);
 }
+```
+
+```{caution}
+Remember overloading a method too many times will make your application hard to maintain.
 ```
 
 ## Static members
@@ -126,8 +126,7 @@ public class Employee {
         setHourlyRate(hourlyRate);
         numberOfEmployees++;
     }
-    ...
-    }
+}
 ```
 
 Main:
@@ -143,13 +142,11 @@ public class Main {
         System.out.println(Employee.numberOfEmployees);
         // use static methods
         Employee.printNumberOfEmployees();
-        int wage = employee.calculateWage(10);
-        System.out.println(wage);
     }
 }
 ```
 
 ```{note}
 Static methods can only see the other static methods in this class.<br>
-main method be static, this enables the java runtime to directly call the method without having to create a new object.
+main method should be static, this enables the java runtime to directly call the method without having to create a new object.
 ```
